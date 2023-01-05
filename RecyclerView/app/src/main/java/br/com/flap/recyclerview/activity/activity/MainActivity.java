@@ -16,6 +16,8 @@ import br.com.flap.recyclerview.activity.model.Filme;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+
+    //cria uma lista para o model "Filme".
     private List<Filme> listaFilmes = new ArrayList<>();
 
     @Override
@@ -25,26 +27,28 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
 
-        //puxar o objeto de listagem dos filmes
+        //puxar o objeto de listagem dos filmes.
         criarfilmes();
 
-        //Configurar adapter
+        //Configurar adapter.
         Adapter adapter = new Adapter(listaFilmes);
-        //SETAR O ADAPTER CRIADO NA LINHA 34
+        //SETAR O ADAPTER CONFIGURADO NA LINHA 34.
         recyclerView.setAdapter( adapter );
 
-        //configurar RecyclerView
+        //configurar RecyclerView.
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        //SETAR O LAYAOUT CRIADO ACIMA AO RECYCLERVIEW
+        //SETAR O LAYAOUT CRIADO ACIMA AO RECYCLERVIEW.
         recyclerView.setLayoutManager(layoutManager);
 
-        //SETAR UM TAMANHO FIXO QUE FOI SETADO NA CLASSE ADAPTER
+        //SETAR UM TAMANHO FIXO QUE FOI SETADO NA CLASSE ADAPTER.
         recyclerView.setHasFixedSize(true);
 
     }
-    //OBJETO PARA SETAR LISTA DE "FILMES" NO MODEL "FILME"
+    //OBJETO PARA SETAR LISTA DE "FILMES" NO MODEL "FILME".
     public void criarfilmes(){
 
+        //Instancia o model "Filme" na "variavel filme" e logo apos identifica onde se deve ser inserido a listagem, no caso
+        //array criada em "listaFilmes".
         Filme filme = new Filme("Homem Aranha", "Ficção", "2017");
         this.listaFilmes.add(filme);
 

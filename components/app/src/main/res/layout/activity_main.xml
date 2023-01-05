@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:dividerPadding="30dp"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/infoName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Type your name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="300dp"
+        android:minWidth="100dp"
+        android:textColorHint="#000000"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxCollapsedPaddingTop="0dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/infoEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type your email"
+            android:padding="10dp"
+            android:paddingLeft="0dp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/checkBoxGreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Green" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBlue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blue" />
+
+    <CheckBox
+        android:id="@+id/checkBoxRed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Red" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sexo:" />
+
+        <RadioButton
+            android:id="@+id/radioButton01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masculino" />
+
+        <RadioButton
+            android:id="@+id/radioButton02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Feminino" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="submitInfo"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/infoResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/infoResult3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/infoResult2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

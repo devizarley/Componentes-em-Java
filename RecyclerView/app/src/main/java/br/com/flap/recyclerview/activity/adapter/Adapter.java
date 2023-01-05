@@ -13,6 +13,7 @@ import java.util.List;
 import br.com.flap.recyclerview.R;
 import br.com.flap.recyclerview.activity.model.Filme;
 
+//"RecyclerView.Adapter<VH>" é a configuração para se puxar a função de Adapter que está localizada no "RecyclerView"
 public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
 
     //cria uma lista pois a lista criada no "MainActivity" é "private".
@@ -49,7 +50,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
         return listaFilmes.size();
     }
 
-    //classe criada onde é recebido toda configuração feita antes.
+    //classe criada para exibir os dados de cada elemento da lista.
     public class myViewHolder extends  RecyclerView.ViewHolder{
 
         //Seta todos os componentes que vão ser apresentados.

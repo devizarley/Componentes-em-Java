@@ -5,11 +5,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.flap.recyclerview.R;
+import br.com.flap.recyclerview.activity.ClickListener;
 import br.com.flap.recyclerview.activity.adapter.Adapter;
 import br.com.flap.recyclerview.activity.model.Filme;
 
@@ -26,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recyclerView);
-
-        //puxar o objeto de listagem dos filmes.
         criarfilmes();
 
         //Configurar adapter.
@@ -42,6 +44,31 @@ public class MainActivity extends AppCompatActivity {
 
         //SETAR UM TAMANHO FIXO QUE FOI SETADO NA CLASSE ADAPTER.
         recyclerView.setHasFixedSize(true);
+
+        //Evento de click
+        recyclerView.addOnItemTouchListener(
+            new ClickListener(
+                    getApplicationContext(),
+                    recyclerView,
+                    new ClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            Filme filme = listaFilmes.get(position);
+                            Toast.makeText(MainActivity.this, "Item precionado: " + filme.getTituloFilme(), Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onLongItemClick(View view, int position) {
+                            Filme filme = listaFilmes.get(position);
+                            Toast.makeText(MainActivity.this, "Click longo: " + filme.getTituloFilme(), Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        }
+                    }
+            )
+        );
 
     }
     //OBJETO PARA SETAR LISTA DE "FILMES" NO MODEL "FILME".

@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,12 +28,22 @@ public class MainActivity extends AppCompatActivity {
         recyclerPostagem = findViewById(R.id.recyclerPostagem);
 
         this.prepararPostagens();
-
+        //cria o adapter
         Adapter adapter = new Adapter(postagens);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerPostagem.setLayoutManager(layoutManager);
+        //cria o layout
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        //Layout em forma de grid
+        //RecyclerView.LayoutManager layoutManagerGrid = new LinearLayoutManager(this, 1);
 
+        //Seta uma orientação como Horizontal ou vertical mas só funciona utilizando "LinearLayoutManager".
+        layoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        //layoutManager.setOrientation(RecyclerView.VERTICAL);
+
+
+        //Seta o layout
+        recyclerPostagem.setLayoutManager(layoutManager);
+        //seta o adapter
         recyclerPostagem.setAdapter(adapter);
     }
 

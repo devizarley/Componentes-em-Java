@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameConteudo,conversasFragment);
         transaction.commit();
-
+        
         buttonContato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 transaction.commit();
             }
         });
+        //Função de click para navegar até ao fragmento de "Contato"
         buttonConversas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

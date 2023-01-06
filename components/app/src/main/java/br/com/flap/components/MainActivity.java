@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton radioButton01, radioButton02;
     private RadioGroup radioGroup;
 
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void radioButton () {
-        //Maneira submit
+        //Maneira button submit
 
         if (radioButton01.isChecked()){
             infoResult2.setText("Masculino");
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             infoResult2.setText("Feminino");
         }else {}
 
-        //Maneira auto
+        //Maneira automatica, ao selecionado já atualiza a informação.
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

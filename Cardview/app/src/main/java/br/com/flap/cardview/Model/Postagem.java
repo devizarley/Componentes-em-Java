@@ -2,6 +2,8 @@ package br.com.flap.cardview.Model;
 
 public class Postagem {
 
+    //modelo para setar e recuperar dados da lista.
+
     private String nome;
     private String descricao;
     private int imagem;

@@ -19,20 +19,21 @@ import br.com.flap.cardview.R;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
 
+    //Cria e puxa as listas criadas no Main-Activity
     private List<Postagem> postagens;
-
     public Adapter(List<Postagem> p) {
         this.postagens = p;
     }
 
     @NonNull
     @Override
+    //Cria o viewholder
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemlista = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.adapter_postagem, parent, false);
         return new myViewHolder(itemlista);
     }
-
+    //seta todas as informações
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
 
@@ -42,12 +43,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
         holder.descricao.setText(postagem.getDescricao());
         holder.imagem.setImageResource(postagem.getImagem());
     }
-
+    //objeto pra retornar o numero de view
     @Override
     public int getItemCount() {
         return postagens.size();
     }
-
+    
     public class myViewHolder extends RecyclerView.ViewHolder{
 
         TextView nome;

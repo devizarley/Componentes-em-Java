@@ -48,7 +48,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
     public int getItemCount() {
         return postagens.size();
     }
-    
+    //objeto para criar viewholder e setar no adapter junto com os conteudos encontrados no view
     public class myViewHolder extends RecyclerView.ViewHolder{
 
         TextView nome;

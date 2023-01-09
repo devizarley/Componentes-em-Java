@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.LayoutInflater;
 import android.view.View;
 
+import br.com.flap.listoftasks.Adapter.Adapter;
 import br.com.flap.listoftasks.R;
 import br.com.flap.listoftasks.databinding.ActivityMainBinding;
 
@@ -33,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //config adapter
+        Adapter adapter = new Adapter();
+        
     }
 
     @Override

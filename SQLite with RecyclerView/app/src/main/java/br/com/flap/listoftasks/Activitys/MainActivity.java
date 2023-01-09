@@ -19,10 +19,12 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        recyclerView = findViewById(R.id.recyclerView);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         //config adapter
         Adapter adapter = new Adapter();
-        
+        recyclerView.setAdapter(adapter);
     }
 
     @Override

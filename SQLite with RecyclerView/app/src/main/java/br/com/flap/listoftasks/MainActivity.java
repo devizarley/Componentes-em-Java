@@ -1,35 +1,43 @@
-package br.com.flap.listoftasks.Activitys;
+package br.com.flap.listoftasks;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
 import android.view.View;
 
 import br.com.flap.listoftasks.Adapter.Adapter;
+import br.com.flap.listoftasks.AddTaskActivity;
 import br.com.flap.listoftasks.R;
 import br.com.flap.listoftasks.databinding.ActivityMainBinding;
+import br.com.flap.listoftasks.model.ListTask;
 
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private RecyclerView recyclerView;
+    private List<ListTask> listaTarefas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         recyclerView = findViewById(R.id.recyclerView);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
+
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,10 +46,34 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
-        //config adapter
-        Adapter adapter = new Adapter();
+    public void carregarListaTarefas(){
+
+        //Listar tarefas
+        ListTask tarefa1 = new ListTask();
+        ListTask  tarefa2 = new ListTask();
+
+        tarefa1.setTask("Tarefa 1");
+        listaTarefas.add(tarefa1);
+
+        tarefa2.setTask("Tarefa 2");
+        listaTarefas.add(tarefa2);
+        /*
+            Exibe lista de tarefas no RecyclerView
+        */
+        //Configurar um adapter
+        Adapter adapter = new Adapter(listaTarefas);
         recyclerView.setAdapter(adapter);
+        //Configurar RecyclerView
+        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager1);
+    }
+
+    @Override
+    protected void onStart() {
+        carregarListaTarefas();
+        super.onStart();
     }
 
     @Override

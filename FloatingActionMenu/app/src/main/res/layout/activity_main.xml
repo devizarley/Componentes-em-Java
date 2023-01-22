@@ -16,7 +16,7 @@
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu"
-        android:layout_width="164dp"
+        android:layout_width="276dp"
         android:layout_height="125dp"
         android:layout_gravity="end|bottom"
         android:layout_marginLeft="10dp"
@@ -62,7 +62,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_add_24"
-            fab:fab_label="Menu item 1"
+            fab:fab_label="Menu"
+            fab:fab_size="mini" />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_add_24"
+            fab:fab_label="Menu2"
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
